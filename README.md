@@ -20,11 +20,11 @@
   - [Shadow](#Shadow)
 - [Tricks](#Tricks)
 
-## Programing
+# Programing
 
-## Assets
-### Texture
-#### Texture import settings
+# Assets
+## Texture
+### Texture import settings
 <div align="center">
 	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/80402648-6e7f-403a-8558-d6d3fb6a6534">
   <p><b>Texture import settings on Inspector</b></p>
@@ -43,19 +43,33 @@
   <p><b>Compress texture recommended</b></p>
 </div>
 
+### Texture compression format - Player Settings
+<div align="center">
+	<img src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/7b59e89d-0909-4c9e-987a-70e0784c5b2e">
+  <p><b> Texture compression format in Player Settings</b></p>
+</div>
 
-### Audio
-### Mesh
+- **Texture compression format**: **Player Settings** provide a global default for texture compression, affecting all textures unless overridden.
+  - **ETC (Default)**: **ETC (Ericsson Texture Compression)** is a common format used on Android devices.
+  - **ASTC**: **ASTC (Adaptive Scalable Texture Compression)** is a modern texture compression format suitable for a variety of platforms, including newer mobile devices.
+## Audio
+### Texture import settings
+<div align="center">
+	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/6c6db88d-373b-4812-92d8-29431e9f2058">
+  <p><b>Texture import settings in Inspector</b></p>
+</div>
 
-## Performance
-### Object Pooling
-### Bake Mesh
-### Recyclable Scroll
+## Mesh
 
-## Graphics and GPU
-### Lighting
-### LOD
-### Graphics
-### Shadow
+# Performance
+## Object Pooling
+## Bake Mesh
+## Recyclable Scroll
 
-## Tricks
+# Graphics and GPU
+## Lighting
+## LOD
+## Graphics
+## Shadow
+
+# Tricks
