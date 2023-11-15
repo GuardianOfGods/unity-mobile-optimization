@@ -59,7 +59,7 @@
   <p><b>Audio import settings in Inspector</b></p>
 </div>
 
-- Alway enable **Force to mono** to reduce the file size, use less memory and resources and many other advantages.
+- Alway enable **Force to mono** to reduce the file size, use less memory and many other advantages.
 - Reduce the size of your clips and memory usage with compression: 
   - Use **Vorbis** for most sounds (or MP3 for sounds not intended to loop).
   - Use **ADPCM** for short, frequently used sounds (e.g., footsteps, gunshots). This shrinks the files compared to uncompressed PCM, but is quick to decode during playback.
