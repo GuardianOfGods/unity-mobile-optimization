@@ -49,15 +49,25 @@
   <p><b> Texture compression format in Player Settings</b></p>
 </div>
 
-- **Texture compression format**: **Player Settings** provide a global default for texture compression, affecting all textures unless overridden.
+- **Texture compression format**: **Player Settings** provide a global default for texture compression, affecting all textures unless **overridden**.
   - **ETC (Default)**: **ETC (Ericsson Texture Compression)** is a common format used on Android devices.
   - **ASTC**: **ASTC (Adaptive Scalable Texture Compression)** is a modern texture compression format suitable for a variety of platforms, including newer mobile devices.
 ## Audio
-### Texture import settings
+### Audio Import settings
 <div align="center">
 	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/6c6db88d-373b-4812-92d8-29431e9f2058">
-  <p><b>Texture import settings in Inspector</b></p>
+  <p><b>Audio import settings in Inspector</b></p>
 </div>
+
+- Alway enable **Force to mono** to reduce the file size, use less memory and resources and many other advantages.
+- Reduce the size of your clips and memory usage with compression: 
+  - Use **Vorbis** for most sounds (or MP3 for sounds not intended to loop).
+  - Use **ADPCM** for short, frequently used sounds (e.g., footsteps, gunshots). This shrinks the files compared to uncompressed PCM, but is quick to decode during playback.
+- Sound effects on mobile devices should be **22,050 Hz** at most. Using lower settings usually has minimal impact on the final quality; use your own ears to judge.
+- The setting varies by clip size.
+  - **Small clips (< 200 kb)** should **Decompress on Load**. This incurs CPU cost and memory by decompressing a sound into raw 16-bit PCM audio data, so it’s only desirable for short sounds.
+  - **Medium clips (>= 200 kb)** should remain **Compressed in Memory**.
+  - **Large files (background music)** should be set to **Streaming**, or else the entire asset will be loaded into memory at once.
 
 ## Mesh
 
@@ -72,4 +82,6 @@
 ## Graphics
 ## Shadow
 
-# Tricks
+# Tips and Tricks
+## Use original uncompressed WAV files as your source assets when possible
+- If you use any compressed format (such as MP3 or Vorbis), Unity will decompress it, then recompress it during build time. This results in two lossy passes, degrading the final quality.
