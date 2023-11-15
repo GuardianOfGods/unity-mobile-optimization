@@ -83,5 +83,8 @@
 ## Shadow
 
 # Tips and Tricks
-## Use original uncompressed WAV files as your source assets when possible
+## Use original uncompressed WAV files as your source assets when possible.
 - If you use any compressed format (such as MP3 or Vorbis), Unity will decompress it, then recompress it during build time. This results in two lossy passes, degrading the final quality.
+## Use the minimum Audio Source you can in your game.
+- Each active audio source requires CPU resources for playback, which can strain the device's processing capabilities.
+- Active audio sources consume memory, and mobile devices typically have limited RAM.
