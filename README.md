@@ -18,7 +18,7 @@
   - [LOD](#LOD)
   - [Graphics](#Graphics)
   - [Shadow](#Shadow)
-- [Tricks](#Tricks)
+- [Tips and Tricks](#Tips-and-Tricks)
 
 # Programing
 
