@@ -88,3 +88,11 @@
 ## Use the minimum Audio Source you can in your game.
 - Each active audio source requires CPU resources for playback, which can strain the device's processing capabilities.
 - Active audio sources consume memory, and mobile devices typically have limited RAM.
+## Customize Linear vs Gamma color space.
+<div align="center">
+	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/2b7ae850-39e2-41b0-b4dc-2ef3b40f8940">
+  <p><b>Linear vs Gamma color space</b></p>
+</div>
+
+- **Gamma** has better performance **(~10-30%)** than **Linear**. However, the display is a bit worse. 
+- You can find this option in **Player Setting -> Other Settings**.
