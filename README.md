@@ -70,6 +70,17 @@
   - **Large files (background music)** should be set to **Streaming**, or else the entire asset will be loaded into memory at once.
 
 ## Mesh
+### Mesh import settings
+<div align="center">
+	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/3a624b31-b5f6-4fe8-9c71-eebc8068eaf6">
+  <p><b>Audio import settings in Inspector</b></p>
+</div>
+
+- Much like textures, **meshes** can consume excess memory if not imported carefully. To minimize meshes’ memory consumption:
+  - **Compress the mesh**: Aggressive compression can reduce disk space (memory at runtime, however, is unaffected). Note that mesh quantization can result in inaccuracy, so experiment with compression levels to see what works for your models.
+  - **Disable Read/Write**: Enabling this option duplicates the mesh in memory, which keeps one copy of the mesh in system memory and another in GPU memory. In most cases, you should disable it (in Unity 2019.2 and earlier, this option is checked by default).
+  - **Disable rigs and BlendShapes**: If your mesh does not need skeletal or blendshape animation, disable these options wherever possible.
+  - **Disable normals and tangents**: If you are absolutely certain the mesh’s material will not need normals or tangents, uncheck these options for extra savings.
 
 # Performance
 ## Object Pooling
