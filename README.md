@@ -85,6 +85,11 @@
 
 # Performance
 ## Object Pooling
+<div align="center">
+	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/f98b3acf-a298-4efe-94dd-e101cd1b969d">
+  <p><b>Example of Object Pooling</b></p>
+</div>
+
 ## Bake Mesh
 ## Recyclable Scroll
 
