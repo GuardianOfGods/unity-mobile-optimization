@@ -132,5 +132,5 @@
   <p><b>Use incremental GC settings</b></p>
 </div>
 
-- Sometimes enable **use incremental GC** option can improve game's performance and sometimes it's not, you should use the profiler. You can find it in **Player Setting**.
+- Sometimes enable **use incremental GC** option can improve game's performance and sometimes it's not, you should see profiler for the impact. You can find it in **Player Setting**.
 
