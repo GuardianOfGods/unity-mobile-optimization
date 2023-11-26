@@ -83,6 +83,8 @@
   - **Disable rigs and BlendShapes**: If your mesh does not need skeletal or blendshape animation, disable these options wherever possible.
   - **Disable normals and tangents**: If you are absolutely certain the mesh’s material will not need normals or tangents, uncheck these options for extra savings.
 
+### Bake Mesh
+
 # Performance
 ## Object Pooling
 <div align="center">
@@ -92,8 +94,6 @@
 
 - To prevent **Garbage Collector** issues (CPU Spikes) in games with many spawning and destroying objects, a method called **Object Pooling** can be used. Object Pooling refers to creating all necessary objects beforehand and disabling/enabling them when it necessary, instead of instantiating (Instantiate() function) and destroying (Destroy() function) objects during runtime. 
 - These objects can also be spawned beforehand during a loading screen and kept hidden until needed. This way they won’t cause performance issues when spawned during gameplay.
-
-## Bake Mesh
 
 ## Recyclable Scroll
 
@@ -126,3 +126,11 @@
 
 - **Gamma** has better performance **(~10-30%)** than **Linear**. However, the display is a bit worse. 
 - You can find this option in **Player Setting -> Other Settings**.
+## Try using incremental GC (Garbage collection)
+<div align="center">
+	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/fa54bd08-fb26-4890-addd-07e382f7cb9a">
+  <p><b>Use incremental GC settings</b></p>
+</div>
+
+- Sometimes enable **use incremental GC** option can improve game's performance and sometimes it's not, you should use the profiler. You can find it in **Player Setting**.
+
