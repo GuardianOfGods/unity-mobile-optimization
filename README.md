@@ -85,6 +85,8 @@
 
 ### Bake Mesh
 
+- **Bake mesh** is the process of combining meshes to reduce draw calls, which also means increasing game performance. Unity does not provide mesh baking, however there are quite a few assets on the store that provide mesh baking, such as **Mesh Baker**.
+
 # Performance
 ## Object Pooling
 <div align="center">
@@ -134,3 +136,11 @@
 
 - Sometimes enable **use incremental GC** option can improve game's performance and sometimes it's not, you should see profiler for the impact. You can find it in **Player Setting**.
 
+## Disable Vsync
+
+<div align="center">
+	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/87111f15-8f13-4509-9957-3b736c755745">
+  <p><b>Linear vs Gamma color space</b></p>
+</div>
+
+- **Enable Vsync** in mobile game might cause **lag**,  **faster battery drain** and also **limit the frame rate** to the monitor's refresh rate.
