@@ -121,7 +121,7 @@
 ## LOD
 
 <div align="center">
-	<img width="800" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/f86ba363-398b-456b-bce0-dc12d03eac5f">
+	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/1c980b4f-8977-4c80-b3f4-d8256680c45e">
   <p><b>Level of details example</b></p>
 </div>
 
