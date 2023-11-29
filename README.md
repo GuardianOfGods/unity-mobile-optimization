@@ -94,7 +94,7 @@
 	<p><b>Youtube short for example of baking mesh</b></p>
 </div>
 
-- **Bake mesh** is the process of combining meshes to reduce draw calls, which also means increasing game performance. Unity does not provide mesh baking, however there are quite a few assets on the store that provide mesh baking, such as **Mesh Baker**.
+- **Bake mesh** is the process of combining meshes to reduce draw calls, which also means increasing game performance. Unity does not provide mesh baking, however there are quite a few assets on the store that provide mesh baking, such as **Mesh Baker** or **ProBuilder**.
 
 # Performance
 ## Object Pooling
