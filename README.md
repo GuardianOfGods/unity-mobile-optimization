@@ -85,6 +85,14 @@
 
 ### Bake Mesh
 
+<div align="center">
+  <video src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/74429c89-0723-4994-a9eb-1c64a83aeaf5" width="400" />
+</div>
+
+<div align="center">
+	<p><b>Youtube short for example of baking mesh</b></p>
+</div>
+
 - **Bake mesh** is the process of combining meshes to reduce draw calls, which also means increasing game performance. Unity does not provide mesh baking, however there are quite a few assets on the store that provide mesh baking, such as **Mesh Baker**.
 
 # Performance
