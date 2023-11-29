@@ -122,7 +122,7 @@
 
 <div align="center">
 	<img width="800" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/f86ba363-398b-456b-bce0-dc12d03eac5f">
-  <p><b>Rycyclable scrollview</b></p>
+  <p><b>Level of details example</b></p>
 </div>
 
 - Level of detail (LOD) is a technique that reduces the number of GPU operations that Unity requires to render distant meshes.
