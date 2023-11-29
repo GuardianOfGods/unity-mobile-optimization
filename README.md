@@ -119,6 +119,14 @@
 # Graphics and GPU
 ## Lighting
 ## LOD
+
+<div align="center">
+	<img width="800" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/f86ba363-398b-456b-bce0-dc12d03eac5f">
+  <p><b>Rycyclable scrollview</b></p>
+</div>
+
+- Level of detail (LOD) is a technique that reduces the number of GPU operations that Unity requires to render distant meshes.
+- When a GameObject in the Sceneis far away from the Camera, you see less detail compared to when the GameObject is close to the Camera. However, by default, Unity uses the same number of triangles to render it at both distances. This can result in wasted GPU operations, which can impact performance in your Scene.
 ## Graphics
 ## Shadow
 
