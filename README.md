@@ -12,7 +12,6 @@
   - [Mesh](#Mesh)
 - [Performance](#Performance)
   - [Object Pooling](#Object-Pooling)
-  - [Bake Mesh](#Bake-Mesh)
   - [Recyclable Scroll](#Recyclable-Scroll)
 - [Graphics and GPU](#Graphics-and-GPU)
   - [Camera](#Camera)
