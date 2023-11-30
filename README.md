@@ -162,7 +162,7 @@
 - **Enable Vsync** in mobile game might cause **lag**,  **faster battery drain** and also **limit the frame rate** to the monitor's refresh rate.
 
 # Support
-- If you like topic, you can give this repository a star ⭐
+- If you like this topic, you can give this repository a star ⭐
 - I would greatly appreciate it if you could support me with a cup of coffee
 <a href="https://www.buymeacoffee.com/HoangVanThu">
   <img src="https://www.the3rdsequence.com/texturedb/images/donate/buymeacoffee.svg" width="200" height="47"/>
