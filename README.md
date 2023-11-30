@@ -168,7 +168,10 @@
 </div>
 
 - In **Player Setting**. You can check the list of graphics APIs supported by the current version of Unity by unchecking **Auto Graphics API** and clicking on the plus sign to view all API.
-- For **Android**, there are 3 API graphics: **GLES2, GLES3 and Vulkan** base on Unity version. **GLES3** is the best choise for popular mobile devices that you shouldn't remove. If you want to target on old devices, you should have **GLES2**. **Vulkan** is good option for modern devices but sometime it's causing crash and lag for lower devices.
+- For **Android**, there are 3 API graphics: **GLES2, GLES3 and Vulkan** base on Unity version.
+  - **GLES3** is the best choise for popular mobile devices that you shouldn't remove.
+  - If you want to target on old devices, you should have **GLES2**. 
+  - **Vulkan** is good option for modern devices but sometime it's causing crash and lag for lower devices.
 - My recommend is using **GLES2, GLES3** for players number optimizing.
 
 # Support
