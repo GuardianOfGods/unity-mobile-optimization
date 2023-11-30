@@ -161,6 +161,16 @@
 
 - **Enable Vsync** in mobile game might cause **lag**,  **faster battery drain** and also **limit the frame rate** to the monitor's refresh rate.
 
+## Choose Suitable Graphics API
+<div align="center">
+	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/9f16dd3b-3924-4f7e-b4c3-a1560529be76">
+  <p><b>Graphics API</b></p>
+</div>
+
+- In **Player Setting**. You can check the list of graphics APIs supported by the current version of Unity by unchecking **Auto Graphics API** and clicking on the plus sign to view all API.
+- For **Android**, there are 3 API graphics: **GLES2, GLES3 and Vulkan** base on Unity version. **GLES3** is the best choise for popular mobile devices that you shouldn't remove. If you want to target on old devices, you should have **GLES2**. **Vulkan** is good option for modern devices but sometime it's causing crash and lag for lower devices.
+- My recommend is using **GLES2, GLES3** for players number optimizing.
+
 # Support
 - If you like this topic, you can give this repository a star ⭐
 - I would greatly appreciate it if you could support me with a cup of coffee
