@@ -125,8 +125,8 @@
   <p><b>Level of details example</b></p>
 </div>
 
-- Level of detail (LOD) is a technique that reduces the number of GPU operations that Unity requires to render distant meshes.
-- When a GameObject in the Sceneis far away from the Camera, you see less detail compared to when the GameObject is close to the Camera. However, by default, Unity uses the same number of triangles to render it at both distances. This can result in wasted GPU operations, which can impact performance in your Scene.
+- **Level of detail (LOD)** is a technique that reduces the number of GPU operations that Unity requires to render distant meshes.
+- When a GameObject in the Scene is far away from the Camera, you see less detail compared to when the GameObject is close to the Camera. However, by default, Unity uses the same number of triangles to render it at both distances. This can result in wasted GPU operations, which can impact performance in your Scene.
 ## Graphics
 ## Shadow
 
