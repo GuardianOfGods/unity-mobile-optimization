@@ -5,15 +5,12 @@ The article has been synthesized from various sources on the internet. If you fi
 
 **Table of optimization contents:**
 - [Programing](#Programing)
-  - [Clean code](#Clean-code)
-  - [Optimizing](#Optimizing)
+  - [Object Pooling](#Object-Pooling)
+  - [Recyclable Scroll](#Recyclable-Scroll)
 - [Assets](#Assets)
   - [Texture](#Texture)
   - [Audio](#Audio)
   - [Mesh](#Mesh)
-- [Performance](#Performance)
-  - [Object Pooling](#Object-Pooling)
-  - [Recyclable Scroll](#Recyclable-Scroll)
 - [Graphics and GPU](#Graphics-and-GPU)
   - [Camera](#Camera)
   - [Lighting](#Lighting)
@@ -23,6 +20,24 @@ The article has been synthesized from various sources on the internet. If you fi
 - [Tips and Tricks](#Tips-and-Tricks)
 
 # Programing
+## Object Pooling
+<div align="center">
+	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/691394db-f947-43d9-bd13-f65549495f8d">
+  <p><b>Example of Object Pooling</b></p>
+</div>
+
+- To prevent **Garbage Collector** issues (CPU Spikes) in games with many spawning and destroying objects, a method called **Object Pooling** can be used. Object Pooling refers to creating all necessary objects beforehand and disabling/enabling them when it necessary, instead of instantiating (Instantiate() function) and destroying (Destroy() function) objects during runtime. 
+- These objects can also be spawned beforehand during a loading screen and kept hidden until needed. This way they won’t cause performance issues when spawned during gameplay.
+
+## Recyclable Scroll
+
+<div align="center">
+	<img width="500" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/c925547e-8780-45a9-b427-aeaec7a78cba">
+	<img width="500" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/a7d31475-161b-4008-9713-baf97b10d567">
+  <p><b>Rycyclable scrollview</b></p>
+</div>
+
+- By creating a **scrollview with 9999 items** it causes a significant performance degradation for the game. So **rycyclable scrollview** is used to significantly increase the game's performance. Instead of creating 9999 items in a scrollview, **recyclable scrollview** creates a certain number of items that need to be displayed on the screen and reuses them.
 
 # Assets
 ## Texture
@@ -95,27 +110,6 @@ The article has been synthesized from various sources on the internet. If you fi
 </div>
 
 - **Bake mesh** is the process of combining meshes to reduce draw calls, which also means increasing game performance. Unity does not provide mesh baking, however there are quite a few assets on the store that provide mesh baking, such as **Mesh Baker** or **ProBuilder**.
-
-# Performance
-## Object Pooling
-<div align="center">
-	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/691394db-f947-43d9-bd13-f65549495f8d">
-  <p><b>Example of Object Pooling</b></p>
-</div>
-
-- To prevent **Garbage Collector** issues (CPU Spikes) in games with many spawning and destroying objects, a method called **Object Pooling** can be used. Object Pooling refers to creating all necessary objects beforehand and disabling/enabling them when it necessary, instead of instantiating (Instantiate() function) and destroying (Destroy() function) objects during runtime. 
-- These objects can also be spawned beforehand during a loading screen and kept hidden until needed. This way they won’t cause performance issues when spawned during gameplay.
-
-## Recyclable Scroll
-
-<div align="center">
-	<img width="500" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/c925547e-8780-45a9-b427-aeaec7a78cba">
-	<img width="500" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/a7d31475-161b-4008-9713-baf97b10d567">
-  <p><b>Rycyclable scrollview</b></p>
-</div>
-
-- By creating a **scrollview with 9999 items** it causes a significant performance degradation for the game. So **rycyclable scrollview** is used to significantly increase the game's performance. Instead of creating 9999 items in a scrollview, **recyclable scrollview** creates a certain number of items that need to be displayed on the screen and reuses them.
-
 
 # Graphics and GPU
 ## Lighting
