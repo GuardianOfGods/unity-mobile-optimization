@@ -26,7 +26,7 @@ The article has been synthesized from various sources on the internet. If you fi
   <p><b>Example of Object Pooling</b></p>
 </div>
 
-- To prevent **Garbage Collector** issues (CPU Spikes) in games with many spawning and destroying objects, a method called **Object Pooling** can be used. Object Pooling refers to creating all necessary objects beforehand and disabling/enabling them when it necessary, instead of instantiating (Instantiate() function) and destroying (Destroy() function) objects during runtime. 
+- To prevent **Garbage Collector** issues (CPU Spikes) in games with many spawning and destroying objects, a method called **Object Pooling** can be used. **Object Pooling** refers to creating all necessary objects beforehand and disabling/enabling them when it necessary, instead of instantiating (Instantiate() function) and destroying (Destroy() function) objects during runtime. 
 - These objects can also be spawned beforehand during a loading screen and kept hidden until needed. This way they won’t cause performance issues when spawned during gameplay.
 
 ## Recyclable Scroll
@@ -122,8 +122,15 @@ The article has been synthesized from various sources on the internet. If you fi
 
 - **Level of detail (LOD)** is a technique that reduces the number of GPU operations that Unity requires to render distant meshes.
 - When a GameObject in the Scene is far away from the Camera, you see less detail compared to when the GameObject is close to the Camera. However, by default, Unity uses the same number of triangles to render it at both distances. This can result in wasted GPU operations, which can impact performance in your Scene.
-## Graphics
 ## Shadow
+<div align="center">
+	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/bbc9702d-6bef-49d2-b0a2-bb9ccb3cf1bf">
+  <p><b>Lighting properties in Mesh Renderer</b></p>
+</div>
+
+
+- The computation of shadows in Unity incurs a significant performance cost, especially on mobile devices. It is advisable to **disable shadow** casting and receiving if not absolutely necessary, substituting them with **fake shadows** as an alternative to improve performance.
+- You can also create **fake shadows** using a **blurred texture** applied to a simple mesh or quad underneath your characters. Otherwise, you can create blob shadows with **custom shaders**.
 
 # Tips and Tricks
 ## Use original uncompressed WAV files as your source assets when possible.
