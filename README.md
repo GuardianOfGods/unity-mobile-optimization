@@ -1,6 +1,7 @@
 # unity-mobile-optimization
-- 👋 **Hi there, I'm HoangVanThu**. This topic is about some ways to optimize your games on mobile platform. I hope it's helpful to you and good luck 🍀
-- The article has been synthesized from various sources on the internet. If you find any inaccuracies or have any questions about the content, please submit an issue or provide direct feedback to me.
+👋 **Hi there, I'm HoangVanThu**. This repository discusses various ways to optimize your games on mobile devices, helping enhance overall performance. These techniques aim to improve the gaming experience by optimizing resource usage and performance on mobile platforms.
+
+The article has been synthesized from various sources on the internet. If you find any inaccuracies or have any questions about the content, please submit an issue or provide direct feedback to me.
 
 **Table of optimization contents:**
 - [Programing](#Programing)
