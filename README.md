@@ -28,7 +28,7 @@ The article has been synthesized from various sources on the internet. If you fi
 ## Texture
 ### Texture import settings
 <div align="center">
-	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/80402648-6e7f-403a-8558-d6d3fb6a6534">
+	<img width="400" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/80402648-6e7f-403a-8558-d6d3fb6a6534">
   <p><b>Texture import settings on Inspector</b></p>
 </div>
 
