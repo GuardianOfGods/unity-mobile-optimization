@@ -39,9 +39,8 @@ The article has been synthesized from various sources on the internet. If you fi
 
 - By creating a **scrollview with 9999 items** it causes a significant performance degradation for the game. So **rycyclable scrollview** is used to significantly increase the game's performance. Instead of creating 9999 items in a scrollview, **recyclable scrollview** creates a certain number of items that need to be displayed on the screen and reuses them.
 
-# Assets
-## Texture
-### Texture import settings
+# Assets Import
+## Texture import settings
 <div align="center">
 	<img width="400" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/80402648-6e7f-403a-8558-d6d3fb6a6534">
   <p><b>Texture import settings on Inspector</b></p>
@@ -60,7 +59,7 @@ The article has been synthesized from various sources on the internet. If you fi
   <p><b>Compress texture recommended</b></p>
 </div>
 
-### Texture compression format - Player Settings
+## Texture compression format - Player Settings
 <div align="center">
 	<img src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/7b59e89d-0909-4c9e-987a-70e0784c5b2e">
   <p><b> Texture compression format in Player Settings</b></p>
@@ -69,8 +68,8 @@ The article has been synthesized from various sources on the internet. If you fi
 - **Texture compression format**: **Player Settings** provide a global default for texture compression, affecting all textures unless **overridden**.
   - **ETC (Default)**: **ETC (Ericsson Texture Compression)** is a common format used on Android devices.
   - **ASTC**: **ASTC (Adaptive Scalable Texture Compression)** is a modern texture compression format suitable for a variety of platforms, including newer mobile devices.
-## Audio
-### Audio Import settings
+
+## Audio Import settings
 <div align="center">
 	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/6c6db88d-373b-4812-92d8-29431e9f2058">
   <p><b>Audio import settings in Inspector</b></p>
@@ -86,8 +85,7 @@ The article has been synthesized from various sources on the internet. If you fi
   - **Medium clips (>= 200 kb)** should remain **Compressed in Memory**.
   - **Large files (background music)** should be set to **Streaming**, or else the entire asset will be loaded into memory at once.
 
-## Mesh
-### Mesh import settings
+## Mesh import settings
 <div align="center">
 	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/3a624b31-b5f6-4fe8-9c71-eebc8068eaf6">
   <p><b>Audio import settings in Inspector</b></p>
@@ -99,17 +97,6 @@ The article has been synthesized from various sources on the internet. If you fi
   - **Disable rigs and BlendShapes**: If your mesh does not need skeletal or blendshape animation, disable these options wherever possible.
   - **Disable normals and tangents**: If you are absolutely certain the mesh’s material will not need normals or tangents, uncheck these options for extra savings.
 
-### Bake Mesh
-
-<div align="center">
-  <video src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/74429c89-0723-4994-a9eb-1c64a83aeaf5" width="400" />
-</div>
-
-<div align="center">
-	<p><b>Youtube short for example of baking mesh</b></p>
-</div>
-
-- **Bake mesh** is the process of combining meshes to reduce draw calls, which also means increasing game performance. Unity does not provide mesh baking, however there are quite a few assets on the store that provide mesh baking, such as **Mesh Baker** or **ProBuilder**.
 
 # Tips and Tricks
 ## Use original uncompressed WAV files as your source assets when possible.
@@ -142,6 +129,19 @@ The article has been synthesized from various sources on the internet. If you fi
 
 - **Level of detail (LOD)** is a technique that reduces the number of GPU operations that Unity requires to render distant meshes.
 - When a GameObject in the Scene is far away from the Camera, you see less detail compared to when the GameObject is close to the Camera. However, by default, Unity uses the same number of triangles to render it at both distances. This can result in wasted GPU operations, which can impact performance in your Scene.
+
+## Bake Mesh
+
+<div align="center">
+  <video src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/74429c89-0723-4994-a9eb-1c64a83aeaf5" width="400" />
+</div>
+
+<div align="center">
+	<p><b>Youtube short for example of baking mesh</b></p>
+</div>
+
+- **Bake mesh** is the process of combining meshes to reduce draw calls, which also means increasing game performance. Unity does not provide mesh baking, however there are quite a few assets on the store that provide mesh baking, such as **Mesh Baker** or **ProBuilder**.
+
 
 ## Fake Shadow
 <div align="center">
