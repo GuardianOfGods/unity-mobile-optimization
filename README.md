@@ -11,12 +11,6 @@ The article has been synthesized from various sources on the internet. If you fi
   - [Texture](#Texture)
   - [Audio](#Audio)
   - [Mesh](#Mesh)
-- [Graphics and GPU](#Graphics-and-GPU)
-  - [Camera](#Camera)
-  - [Lighting](#Lighting)
-  - [LOD](#LOD)
-  - [Graphics](#Graphics)
-  - [Shadow](#Shadow)
 - [Tips and Tricks](#Tips-and-Tricks)
 
 # Programing
