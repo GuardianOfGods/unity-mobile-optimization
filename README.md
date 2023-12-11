@@ -174,7 +174,7 @@ The article has been synthesized from various sources on the internet. If you fi
   - **GLES3** is the best choise for popular mobile devices that you shouldn't remove.
   - If you want to target on old devices, you should have **GLES2**. 
   - **Vulkan** is good option for modern devices but sometime it's causing crash and lag for lower devices.
-- My recommend is using **GLES2, GLES3** for players number optimizing.
+- My recommend is using **GLES2, GLES3** for optimizing.
 
 # Support
 - If you like this topic, you can give this repository a star ⭐
