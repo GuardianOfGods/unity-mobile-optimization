@@ -111,27 +111,6 @@ The article has been synthesized from various sources on the internet. If you fi
 
 - **Bake mesh** is the process of combining meshes to reduce draw calls, which also means increasing game performance. Unity does not provide mesh baking, however there are quite a few assets on the store that provide mesh baking, such as **Mesh Baker** or **ProBuilder**.
 
-# Graphics and GPU
-## Lighting
-## LOD
-
-<div align="center">
-	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/1c980b4f-8977-4c80-b3f4-d8256680c45e">
-  <p><b>Level of details example</b></p>
-</div>
-
-- **Level of detail (LOD)** is a technique that reduces the number of GPU operations that Unity requires to render distant meshes.
-- When a GameObject in the Scene is far away from the Camera, you see less detail compared to when the GameObject is close to the Camera. However, by default, Unity uses the same number of triangles to render it at both distances. This can result in wasted GPU operations, which can impact performance in your Scene.
-## Shadow
-<div align="center">
-	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/bbc9702d-6bef-49d2-b0a2-bb9ccb3cf1bf">
-  <p><b>Lighting properties in Mesh Renderer</b></p>
-</div>
-
-
-- The computation of shadows in Unity incurs a significant performance cost, especially on mobile devices. It is advisable to **disable shadow** casting and receiving if not absolutely necessary, substituting them with **fake shadows** as an alternative to improve performance.
-- You can also create **fake shadows** using a **blurred texture** applied to a simple mesh or quad underneath your characters. Otherwise, you can create blob shadows with **custom shaders**.
-
 # Tips and Tricks
 ## Use original uncompressed WAV files as your source assets when possible.
 - If you use any compressed format (such as MP3 or Vorbis), Unity will decompress it, then recompress it during build time. This results in two lossy passes, degrading the final quality.
@@ -153,6 +132,26 @@ The article has been synthesized from various sources on the internet. If you fi
 </div>
 
 - Sometimes enable **use incremental GC** option can improve game's performance and sometimes it's not, you should see profiler for the impact. You can find it in **Player Setting**.
+
+## Using LOD technical
+
+<div align="center">
+	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/1c980b4f-8977-4c80-b3f4-d8256680c45e">
+  <p><b>Level of details example</b></p>
+</div>
+
+- **Level of detail (LOD)** is a technique that reduces the number of GPU operations that Unity requires to render distant meshes.
+- When a GameObject in the Scene is far away from the Camera, you see less detail compared to when the GameObject is close to the Camera. However, by default, Unity uses the same number of triangles to render it at both distances. This can result in wasted GPU operations, which can impact performance in your Scene.
+
+## Fake Shadow
+<div align="center">
+	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/bbc9702d-6bef-49d2-b0a2-bb9ccb3cf1bf">
+  <p><b>Lighting properties in Mesh Renderer</b></p>
+</div>
+
+
+- The computation of shadows in Unity incurs a significant performance cost, especially on mobile devices. It is advisable to **disable shadow** casting and receiving if not absolutely necessary, substituting them with **fake shadows** as an alternative to improve performance.
+- You can also create **fake shadows** using a **blurred texture** applied to a simple mesh or quad underneath your characters. Otherwise, you can create blob shadows with **custom shaders**.
 
 ## Disable Vsync
 
