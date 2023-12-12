@@ -34,7 +34,7 @@ The article has been synthesized from various sources on the internet. If you fi
 - By creating a **scrollview with 9999 items** it causes a significant performance degradation for the game. So **rycyclable scrollview** is used to significantly increase the game's performance. Instead of creating 9999 items in a scrollview, **recyclable scrollview** creates a certain number of items that need to be displayed on the screen and reuses them.
 
 # Assets Import
-## Texture import settings
+## Texture
 <div align="center">
 	<img width="400" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/80402648-6e7f-403a-8558-d6d3fb6a6534">
   <p><b>Texture import settings on Inspector</b></p>
@@ -63,7 +63,7 @@ The article has been synthesized from various sources on the internet. If you fi
   - **ETC (Default)**: **ETC (Ericsson Texture Compression)** is a common format used on Android devices.
   - **ASTC**: **ASTC (Adaptive Scalable Texture Compression)** is a modern texture compression format suitable for a variety of platforms, including newer mobile devices.
 
-## Audio Import settings
+## Audio
 <div align="center">
 	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/6c6db88d-373b-4812-92d8-29431e9f2058">
   <p><b>Audio import settings in Inspector</b></p>
@@ -79,7 +79,7 @@ The article has been synthesized from various sources on the internet. If you fi
   - **Medium clips (>= 200 kb)** should remain **Compressed in Memory**.
   - **Large files (background music)** should be set to **Streaming**, or else the entire asset will be loaded into memory at once.
 
-## Mesh import settings
+## Mesh
 <div align="center">
 	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/3a624b31-b5f6-4fe8-9c71-eebc8068eaf6">
   <p><b>Audio import settings in Inspector</b></p>
