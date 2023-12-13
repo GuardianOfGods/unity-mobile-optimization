@@ -11,6 +11,7 @@ The article has been synthesized from various sources on the internet. If you fi
   - [Texture](#Texture)
   - [Audio](#Audio)
   - [Mesh](#Mesh)
+  - [Animation](#Animation)
 - [Tips and Tricks](#Tips-and-Tricks)
 
 # Programing
