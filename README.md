@@ -53,7 +53,7 @@ The article has been synthesized from various sources on the internet. If you fi
   <p><b>Compress texture recommended</b></p>
 </div>
 
-## Texture compression format - Player Settings
+### Texture compression format - Player Settings
 <div align="center">
 	<img src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/7b59e89d-0909-4c9e-987a-70e0784c5b2e">
   <p><b> Texture compression format in Player Settings</b></p>
@@ -91,6 +91,14 @@ The article has been synthesized from various sources on the internet. If you fi
   - **Disable rigs and BlendShapes**: If your mesh does not need skeletal or blendshape animation, disable these options wherever possible.
   - **Disable normals and tangents**: If you are absolutely certain the mesh’s material will not need normals or tangents, uncheck these options for extra savings.
 
+## Animation
+<div align="center">
+	<img width="800" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/b1850f34-c86a-41a9-99a6-a6a3be61a609">
+  <p><b>Animation import settings in Inspector</b></p>
+</div>
+
+- By clicking on a model containing animation in the project, you can open the **animation import settings**.
+- You can change properties such as **rotation error, position error, and scale error** to reduce file size. However, keep in mind that these parameters introduce errors to the animation, so you should be cautious when adjusting them. You can refer to the [documentation](https://www.techarthub.com/animation-compression-unity/) for more details on compression and animation
 
 # Tips and Tricks
 ## Use original uncompressed WAV files as your source assets when possible.
