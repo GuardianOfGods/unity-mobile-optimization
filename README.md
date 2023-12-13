@@ -102,10 +102,10 @@ The article has been synthesized from various sources on the internet. If you fi
 
 # Tips and Tricks
 ## Use original uncompressed WAV files as your source assets when possible.
-- If you use any compressed format (such as MP3 or Vorbis), Unity will decompress it, then recompress it during build time. This results in two lossy passes, degrading the final quality.
+- If you use any compressed format (such as **MP3** or **Vorbis**), Unity will decompress it, then recompress it during build time. This results in two lossy passes, degrading the final quality.
 ## Use the minimum Audio Source you can in your game.
-- Each active audio source requires CPU resources for playback, which can strain the device's processing capabilities.
-- Active audio sources consume memory, and mobile devices typically have limited RAM.
+- Each **active audio source** requires CPU resources for playback, which can strain the device's processing capabilities.
+- **Active audio sources** consume memory, and mobile devices typically have limited RAM.
 ## Customize Linear vs Gamma color space.
 <div align="center">
 	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/2b7ae850-39e2-41b0-b4dc-2ef3b40f8940">
