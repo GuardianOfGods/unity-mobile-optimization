@@ -155,6 +155,17 @@ The article has been synthesized from various sources on the internet. If you fi
 - The computation of shadows in Unity incurs a significant performance cost, especially on mobile devices. It is advisable to **disable shadow** casting and receiving if not absolutely necessary, substituting them with **fake shadows** as an alternative to improve performance.
 - You can also create **fake shadows** using a **blurred texture** applied to a simple mesh or quad underneath your characters. Otherwise, you can create blob shadows with **custom shaders**.
 
+## Pack texture
+
+<div align="center">
+	<img width="500" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/b3490819-9e4e-4948-884a-36b0d75cf23e">
+	<img width="500" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/b4ca9a34-3a52-4ae6-9948-3b13f48a94e8">
+  <p><b>Create and settings a sprite atlas</b></p>
+</div>
+
+- Combine textures into a **sprite atlas** within the same popup or scene in Unity to enable **batching draw call**. This will help improve performance, although it may slightly increase the game's file size.
+- Attach asset objects to pack and note that you should **disable tight packing** if you don't want to wrong display.
+
 ## Disable Vsync
 
 <div align="center">
