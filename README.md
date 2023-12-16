@@ -21,7 +21,8 @@ The article has been synthesized from various sources on the internet. If you fi
   <p><b>Example of Object Pooling</b></p>
 </div>
 
-- To prevent **Garbage Collector** issues (CPU Spikes) in games with many spawning and destroying objects, a method called **Object Pooling** can be used. **Object Pooling** refers to creating all necessary objects beforehand and disabling/enabling them when it necessary, instead of instantiating (Instantiate() function) and destroying (Destroy() function) objects during runtime. 
+- To prevent **Garbage Collector** issues (CPU Spikes) in games with many spawning and destroying objects, a method called **Object Pooling** can be used. **Object Pooling** refers to creating all necessary objects beforehand and disabling/enabling them when it necessary, instead of instantiating (Instantiate() function) and destroying (Destroy() function) objects during runtime.
+
 - These objects can also be spawned beforehand during a loading screen and kept hidden until needed. This way they won’t cause performance issues when spawned during gameplay.
 
 ## Recyclable Scroll
