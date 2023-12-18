@@ -14,8 +14,28 @@ The article has been synthesized from various sources on the internet. If you fi
   - [Animation](#Animation)
 - [Tips and Tricks](#Tips-and-Tricks)
 
+---
 # Programing
-## Object Pooling
+## Optimizing Script
+### Avoid Allocating Memory
+Every time an object is created, memory is allocated. Very often in code, you are creating objects without even knowing it. 
+
+#### Situation 1: In Unity, the term "string" refers to a data type, not a variable name.
+- You want to debug log a content like this:
+```diff
+- Debug.Log("hello" + " " + "world");
+```
+- This code above will create 3 difference string and located in the heap memory. So this should be:
+```diff
++ Debug.Log("hello" + " " + "world");
+```
+
+#### Situation 2: Use classes and struct wisely.
+- Class and struct both have similar structures. However, handling data with a struct is faster than a class because a struct is a variable, while a class is a data type. 
+... to be continue
+
+## Using Technical
+### Object Pooling
 <div align="center">
 	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/691394db-f947-43d9-bd13-f65549495f8d">
   <p><b>Example of Object Pooling</b></p>
@@ -25,7 +45,7 @@ The article has been synthesized from various sources on the internet. If you fi
 
 - These objects can also be spawned beforehand during a loading screen and kept hidden until needed. This way they won’t cause performance issues when spawned during gameplay.
 
-## Recyclable Scroll
+### Recyclable Scroll
 
 <div align="center">
 	<img width="500" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/c925547e-8780-45a9-b427-aeaec7a78cba">
@@ -35,6 +55,7 @@ The article has been synthesized from various sources on the internet. If you fi
 
 - By creating a **scrollview with 9999 items** it causes a significant performance degradation for the game. So **rycyclable scrollview** is used to significantly increase the game's performance. Instead of creating 9999 items in a scrollview, **recyclable scrollview** creates a certain number of items that need to be displayed on the screen and reuses them.
 
+---
 # Assets Import
 ## Texture
 <div align="center">
