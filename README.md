@@ -31,8 +31,17 @@ Every time an object is created, memory is allocated. Very often in code, you ar
 ```
 
 #### Situation 2: Use classes and struct wisely.
-- Class and struct both have similar structures. However, handling data with a struct is faster than a class because a struct is a variable, while a class is a data type. 
-... to be continue
+- **Memory Allocation and Performance Comparison:**
+  - When you create a **struct**, its memory is allocated on the **stack**. This makes **structs** more efficient than **classes**, which are allocated on the **heap**. This means that structs are more suitable for functions that require high performance and low memory usage.
+  - Due to their memory allocation differences, **structs** are generally faster than **classes**. If you’re working with a large amount of data, structs can be more efficient because they don’t require the overhead of heap memory allocation.
+  - However, there are some cases where **classes** are faster than **structs**. For example, when copying large objects, classes can be more efficient because they only copy a reference to the object instead of the object itself.
+- **When to Use Structs:**
+  - **Structs** are best used when you need to represent simple data types, such as integers, strings, or other basic data types. They are also useful when you need to work with large datasets, such as arrays or lists, where performance is critical.
+  - You should also use a **struct** when you need to pass a small amount of data to a method, and you want to avoid the overhead of passing a reference to a class.
+- **When to Use Classes:**
+  - **Classes** are best suited for representing complex objects like cars or people and for creating hierarchies of objects with inheritance. They are ideal for handling large amounts of data, such as working with databases.
+  - **Classes** are useful when encapsulating functionality and data together, providing organized and maintainable code.
+  - Additionally, **classes** support the implementation of **interfaces**, enhancing flexibility and modularity in your code.
 
 ## Using Technical
 ### Object Pooling
