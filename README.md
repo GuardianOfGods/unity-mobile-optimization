@@ -27,7 +27,7 @@ Every time an object is created, memory is allocated. Very often in code, you ar
 ```
 - This code above will create 3 difference string and located in the heap memory. So this should be:
 ```diff
-+ Debug.Log("hello" + " " + "world");
++ Debug.Log("hello world");
 ```
 
 #### Situation 2: Use classes and struct wisely.
