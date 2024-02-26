@@ -5,6 +5,8 @@ The article has been synthesized from various sources on the internet. If you fi
 
 **Table of optimization contents:**
 - [Programing](#Programing)
+  - [Optimizing Script](#Optimizing-Script)
+- [Technical](#Technical)
   - [Object Pooling](#Object-Pooling)
   - [Recyclable Scroll](#Recyclable-Scroll)
 - [Assets Import](#Assets-Import)
@@ -43,7 +45,7 @@ Every time an object is created, memory is allocated. Very often in code, you ar
   - **Classes** are useful when encapsulating functionality and data together, providing organized and maintainable code.
   - Additionally, **classes** support the implementation of **interfaces**, enhancing flexibility and modularity in your code.
 
-## Using Technical
+## Technical
 ### Object Pooling
 <div align="center">
 	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/691394db-f947-43d9-bd13-f65549495f8d">
