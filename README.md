@@ -18,6 +18,9 @@ The article has been synthesized from various sources on the internet. If you fi
 
 ---
 # Programing
+## Clean Code
+- Your game may have many code redundancy, so clean code could increase the performance for your game.
+- [Here](https://github.com/thangchung/clean-code-dotnet) I found a good topic about clean code.
 ## Optimizing Script
 ### Avoid Allocating Memory
 Every time an object is created, memory is allocated. Very often in code, you are creating objects without even knowing it. 
