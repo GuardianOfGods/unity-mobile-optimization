@@ -69,10 +69,10 @@ Debug.Log("The maximum value is: " + max);
 - With Algorithm (using LINQ) we could rewrite this code like this:
 ```diff
 int[] numbers = { 10, 5, 20, 15, 8 };
-int max = numbers.Max(); // Using LINQ to find the maximum value
+int max = numbers.Max();
 Debug.Log("The maximum value is: " + max);
 ```
-**The results of verification demonstrate that using LINQ yields faster execution speed and shorter code syntax.**  
+**The results of example above demonstrate that using LINQ yields faster execution speed and shorter code syntax.**  
 
 ## Technical
 ### Object Pooling
