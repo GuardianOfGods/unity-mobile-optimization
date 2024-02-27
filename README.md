@@ -6,8 +6,8 @@ The article has been synthesized from various sources on the internet. If you fi
 **Table of optimization contents:**
 - [Programing](#Programing)
   - [Clean Code](#Clean-Code)
-  - [Avoid Allocating Memory](Avoid-Allocating-Memory)
-  - [Use Algorithm](Use-Algorithm)
+  - [Avoid Allocating Memory](#Avoid-Allocating-Memory)
+  - [Use Algorithm](#Use-Algorithm)
 - [Technical](#Technical)
   - [Object Pooling](#Object-Pooling)
   - [Recyclable Scroll](#Recyclable-Scroll)
