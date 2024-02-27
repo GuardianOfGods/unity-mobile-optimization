@@ -6,7 +6,8 @@ The article has been synthesized from various sources on the internet. If you fi
 **Table of optimization contents:**
 - [Programing](#Programing)
   - [Clean Code](#Clean-Code)
-  - [Optimizing Script](#Optimizing-Script)
+  - [Avoid Allocating Memory](Avoid-Allocating-Memory)
+  - [Use Algorithm](Use-Algorithm)
 - [Technical](#Technical)
   - [Object Pooling](#Object-Pooling)
   - [Recyclable Scroll](#Recyclable-Scroll)
@@ -22,11 +23,11 @@ The article has been synthesized from various sources on the internet. If you fi
 ## Clean Code
 - Your game may have many code redundancy, so clean code could increase the performance for your game.
 - [Here](https://github.com/thangchung/clean-code-dotnet) I found a good topic about clean code.
-## Optimizing Script
-### Avoid Allocating Memory
+
+## Avoid Allocating Memory
 Every time an object is created, memory is allocated. Very often in code, you are creating objects without even knowing it. 
 
-#### Situation 1: In Unity, the term "string" refers to a data type, not a variable name.
+### Situation 1: In Unity, the term "string" refers to a data type, not a variable name.
 - You want to debug log a content like this:
 ```diff
 - Debug.Log("hello" + " " + "world");
@@ -36,7 +37,7 @@ Every time an object is created, memory is allocated. Very often in code, you ar
 + Debug.Log("hello world");
 ```
 
-#### Situation 2: Use classes and struct wisely.
+### Situation 2: Use classes and struct wisely.
 - **Memory Allocation and Performance Comparison:**
   - When you create a **struct**, its memory is allocated on the **stack**. This makes **structs** more efficient than **classes**, which are allocated on the **heap**. This means that structs are more suitable for functions that require high performance and low memory usage.
   - Due to their memory allocation differences, **structs** are generally faster than **classes**. If you’re working with a large amount of data, structs can be more efficient because they don’t require the overhead of heap memory allocation.
@@ -48,6 +49,30 @@ Every time an object is created, memory is allocated. Very often in code, you ar
   - **Classes** are best suited for representing complex objects like cars or people and for creating hierarchies of objects with inheritance. They are ideal for handling large amounts of data, such as working with databases.
   - **Classes** are useful when encapsulating functionality and data together, providing organized and maintainable code.
   - Additionally, **classes** support the implementation of **interfaces**, enhancing flexibility and modularity in your code.
+
+## Use Algorithm
+- The algorithm will significantly improve the performance of the game, apply it whenever possible.
+### Example
+- In this stuation, we want to find out the maximum number in array. Without algorithm:
+```diff
+int[] numbers = { 10, 5, 20, 15, 8 };
+int max = numbers[0]; 
+for (int i = 1; i < numbers.Length; i++)
+{
+	if (numbers[i] > max)
+	{
+		max = numbers[i];
+	}
+}
+Debug.Log("The maximum value is: " + max);
+```
+- With Algorithm (using LINQ) we could rewrite this code like this:
+```diff
+int[] numbers = { 10, 5, 20, 15, 8 };
+int max = numbers.Max(); // Using LINQ to find the maximum value
+Debug.Log("The maximum value is: " + max);
+```
+**The results of verification demonstrate that using LINQ yields faster execution speed and shorter code syntax.**  
 
 ## Technical
 ### Object Pooling
