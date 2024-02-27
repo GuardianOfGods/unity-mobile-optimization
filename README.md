@@ -5,6 +5,7 @@ The article has been synthesized from various sources on the internet. If you fi
 
 **Table of optimization contents:**
 - [Programing](#Programing)
+  - [Clean Code](#Clean-Code)
   - [Optimizing Script](#Optimizing-Script)
 - [Technical](#Technical)
   - [Object Pooling](#Object-Pooling)
