@@ -228,6 +228,17 @@ Debug.Log("The maximum value is: " + max);
 - Combine textures into a **sprite atlas** within the same popup or scene in Unity to enable **batching draw call**. This will help improve performance, although it may slightly increase the game's file size.
 - Attach asset objects to pack and note that you should **disable tight packing** if you don't want to wrong display.
 
+## Enable GPU Instancing
+
+<div align="center">
+	<img width="500" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/af04b99c-f6fb-40ee-966b-20c621fe6f1b">
+  <p><b>Create and settings a sprite atlas</b></p>
+</div>
+
+
+- **GPU instancing** is a draw call optimization method that renders multiple copies of a mesh with the same material in a single draw call. Each copy of the mesh is called an instance. This is useful for drawing things that appear multiple times in a **scene**, for example, trees or bushes.
+- **GPU instancing** renders identical meshes in the same draw call. To add variation and reduce the appearance of repetition, each instance can have different properties, such as Color or Scale. Draw calls that render multiple instances appear in the **Frame Debugger** as Render Mesh (instanced).
+
 ## Disable Vsync
 
 <div align="center">
