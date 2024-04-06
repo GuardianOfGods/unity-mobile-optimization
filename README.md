@@ -52,7 +52,7 @@ Every time an object is created, memory is allocated. Very often in code, you ar
 
 ## Use Algorithm
 - The algorithm will significantly improve the performance of the game, apply it whenever possible.
-- 
+
 ## Technical
 ### Object Pooling
 <div align="center">
