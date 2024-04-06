@@ -52,28 +52,7 @@ Every time an object is created, memory is allocated. Very often in code, you ar
 
 ## Use Algorithm
 - The algorithm will significantly improve the performance of the game, apply it whenever possible.
-### Example
-- In this stuation, we want to find out the maximum number in array. Without algorithm:
-```diff
-int[] numbers = { 10, 5, 20, 15, 8 };
-int max = numbers[0]; 
-for (int i = 1; i < numbers.Length; i++)
-{
-	if (numbers[i] > max)
-	{
-		max = numbers[i];
-	}
-}
-Debug.Log("The maximum value is: " + max);
-```
-- With Algorithm (using LINQ) we could rewrite this code like this:
-```diff
-int[] numbers = { 10, 5, 20, 15, 8 };
-int max = numbers.Max();
-Debug.Log("The maximum value is: " + max);
-```
-**The results of example above demonstrate that using LINQ yields faster execution speed and shorter code syntax.**  
-
+- 
 ## Technical
 ### Object Pooling
 <div align="center">
