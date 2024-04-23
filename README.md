@@ -192,14 +192,12 @@ Every time an object is created, memory is allocated. Very often in code, you ar
 </div>
 
 - **Bake mesh** is the process of combining meshes to reduce draw calls, which also means increasing game performance. Unity does not provide mesh baking, however there are quite a few assets on the store that provide mesh baking, such as **Mesh Baker** or **ProBuilder**.
-
-
+- Here are some assets you can choose: [Bake Mesh](https://assetstore.unity.com/packages/tools/modeling/mesh-baker-5017), [Simplest Mesh Baker](https://assetstore.unity.com/packages/tools/utilities/simplest-mesh-baker-118123)
 ## Fake Shadow
 <div align="center">
 	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/bbc9702d-6bef-49d2-b0a2-bb9ccb3cf1bf">
   <p><b>Lighting properties in Mesh Renderer</b></p>
 </div>
-
 
 - The computation of shadows in Unity incurs a significant performance cost, especially on mobile devices. It is advisable to **disable shadow** casting and receiving if not absolutely necessary, substituting them with **fake shadows** as an alternative to improve performance.
 - You can also create **fake shadows** using a **blurred texture** applied to a simple mesh or quad underneath your characters. Otherwise, you can create blob shadows with **custom shaders**.
