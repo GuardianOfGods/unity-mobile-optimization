@@ -4,7 +4,7 @@
 The article has been synthesized from various sources on the internet. If you find any inaccuracies or have any questions about the content, please submit an issue or provide direct feedback to me.
 
 **Table of optimization contents:**
-- [Programing](#Programing)
+- [Scripting](#Scripting)
   - [Clean Code](#Clean-Code)
   - [Avoid Allocating Memory](#Avoid-Allocating-Memory)
   - [Use Algorithm](#Use-Algorithm)
@@ -19,7 +19,7 @@ The article has been synthesized from various sources on the internet. If you fi
 - [Tips and Tricks](#Tips-and-Tricks)
 
 ---
-# Programing
+# Scripting
 ## Clean Code
 - Your game may have many code redundancy, so clean code could increase the performance for your game.
 - [Here](https://github.com/thangchung/clean-code-dotnet) I found a good topic about clean code.
@@ -49,6 +49,9 @@ Every time an object is created, memory is allocated. Very often in code, you ar
   - **Classes** are best suited for representing complex objects like cars or people and for creating hierarchies of objects with inheritance. They are ideal for handling large amounts of data, such as working with databases.
   - **Classes** are useful when encapsulating functionality and data together, providing organized and maintainable code.
   - Additionally, **classes** support the implementation of **interfaces**, enhancing flexibility and modularity in your code.
+
+### Situation 3: Use C# Events instead of UnityEvents.
+- **UnityEvent** creates less garbage than **C# events** if you add more than two listeners to it, but creates more garbage otherwise. It creates garbage when dispatched (Update: the first time) where C# events do not. And it’s at least twice as slow as C# events.
 
 ## Use Algorithm
 - The algorithm will significantly improve the performance of the game, apply it whenever possible.
