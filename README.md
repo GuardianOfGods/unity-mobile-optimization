@@ -143,6 +143,10 @@ Every time an object is created, memory is allocated. Very often in code, you ar
 - You can change properties such as **rotation error, position error, and scale error** to reduce file size. However, keep in mind that these parameters introduce errors to the animation, so you should be cautious when adjusting them. You can refer to the [documentation](https://www.techarthub.com/animation-compression-unity/) for more details on compression and animation
 
 # Tips and Tricks
+
+## Staying with Unity LTS
+- You should stay with **Unity LTS (Long-term support)** versions only. Versions that do not support LTS often have unexpected errors.
+- As you dive in, keep in mind that while each Tech Stream release is supported with weekly updates until the next version, there is no guarantee of long-term support for new features.
 ## Use original uncompressed WAV files as your source assets when possible.
 - If you use any compressed format (such as **MP3** or **Vorbis**), Unity will decompress it, then recompress it during build time. This results in two lossy passes, degrading the final quality.
 ## Use the minimum Audio Source you can in your game.
