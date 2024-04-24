@@ -246,6 +246,9 @@ Every time an object is created, memory is allocated. Very often in code, you ar
   - **Vulkan** is good option for modern devices but sometime it's causing crash and lag for lower devices.
 - My recommend is using **GLES2, GLES3** for optimizing.
 
+# Another Topics
+- [Unity-Interview-Questions](https://github.com/GuardianOfGods/unity-interview-questions)
+
 # Support
 - If you like this topic, you can give this repository a star ⭐
 - I would greatly appreciate it if you could support me with a cup of coffee
