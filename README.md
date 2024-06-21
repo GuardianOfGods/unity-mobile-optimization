@@ -1,4 +1,8 @@
 # unity-mobile-optimization
+
+![banner](https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/f895bf67-666e-4415-b276-874341ee8a2f)
+
+
 👋 **Hi there, I'm HoangVanThu**. This repository discusses various ways to optimize your games on mobile devices, helping enhance overall performance. These techniques aim to improve the gaming experience by optimizing resource usage and performance on mobile platforms.
 
 The article has been synthesized from various sources on the internet. If you find any inaccuracies or have any questions about the content, please submit an issue or provide direct feedback to me.
