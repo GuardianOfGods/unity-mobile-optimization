@@ -76,7 +76,7 @@ Every time an object is created, memory is allocated. Very often in code, you ar
 <div align="center">
 	<img width="500" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/c925547e-8780-45a9-b427-aeaec7a78cba">
 	<img width="500" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/a7d31475-161b-4008-9713-baf97b10d567">
-  <p><b>Rycyclable scrollview</b></p>
+  <p><b>Recyclable scrollview</b></p>
 </div>
 
 - By creating a **scrollview with 9999 items** it causes a significant performance degradation for the game. So **rycyclable scrollview** is used to significantly increase the game's performance. Instead of creating 9999 items in a scrollview, **recyclable scrollview** creates a certain number of items that need to be displayed on the screen and reuses them.
@@ -96,7 +96,7 @@ Every time an object is created, memory is allocated. Very often in code, you ar
   - **Atlas your textures**: Placing multiple textures into a single texture can reduce draw calls and speed up rendering. Use the Unity Sprite Atlas or the third-party TexturePacker to atlas your textures.
   - **Toggle off the Read/Write Enabled option**: When enabled, this option creates a copy in both CPU- and GPU-addressable memory, doubling the texture’s memory footprint. In most cases, keep this disabled. If you are generating textures at runtime, enforce this via Texture2D.Apply, passing in makeNoLongerReadable set to true.
   - **Disable unnecessary Mip Maps**: Mip Maps are not needed for textures that remain at a consistent size on-screen, such as 2D sprites and UI graphics (leave Mip Maps enabled for 3D models that vary their distance from the camera).
-  - **Compress Texture**: For almost every mobile device today, format sould be **RGBA Compressed ASTC**. For older devices, you can choose **ET2** or **ETC** compress.
+  - **Compress Texture**: For almost every mobile device today, format should be **RGBA Compressed ASTC**. For older devices, you can choose **ET2** or **ETC** compress.
  
 <div align="center">
 	<img src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/248f8c5c-fbce-42c8-8edb-090417c5873f">
