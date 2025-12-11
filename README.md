@@ -2,88 +2,48 @@
 
 ![banner](https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/f895bf67-666e-4415-b276-874341ee8a2f)
 
-
 👋 **Hi there, I'm HoangVanThu**. This repository discusses various ways to optimize your games on mobile devices, helping enhance overall performance. These techniques aim to improve the gaming experience by optimizing resource usage and performance on mobile platforms.
 
 The article has been synthesized from various sources on the internet. If you find any inaccuracies or have any questions about the content, please submit an issue or provide direct feedback to me.
 
-**Table of optimization contents:**
-- [Scripting](#Scripting)
-  - [Clean Code](#Clean-Code)
-  - [Avoid Allocating Memory](#Avoid-Allocating-Memory)
-  - [Use Algorithm](#Use-Algorithm)
-- [Technical](#Technical)
-  - [Object Pooling](#Object-Pooling)
-  - [Recyclable Scroll](#Recyclable-Scroll)
-- [Assets Import](#Assets-Import)
-  - [Texture](#Texture)
-  - [Audio](#Audio)
-  - [Mesh](#Mesh)
-  - [Animation](#Animation)
-- [Tips and Tricks](#Tips-and-Tricks)
+---
+
+# Table of Contents
+- [Reduce Build Size](#reduce-build-size)
+  - [Texture](#texture)
+  - [Audio](#audio)
+  - [Mesh](#mesh)
+  - [Animation](#animation)
+
+- [Optimize Performance](#optimize-performance)
+  - [Scripting](#scripting)
+    - [Clean Code](#clean-code)
+    - [Avoid Allocating Memory](#avoid-allocating-memory)
+    - [Use Algorithm](#use-algorithm)
+  - [Technical](#technical)
+    - [Object Pooling](#object-pooling)
+    - [Recyclable Scroll](#recyclable-scroll)
+  - [Tips and Tricks](#tips-and-tricks)
+    - [Staying with Unity LTS](#staying-with-unity-lts)
+    - [Use original uncompressed WAV files](#use-original-uncompressed-wav-files-as-your-source-assets-when-possible)
+    - [Use the minimum Audio Source you can](#use-the-minimum-audio-source-you-can-in-your-game)
+    - [Customize Linear vs Gamma color space](#customize-linear-vs-gamma-color-space)
+    - [Incremental GC](#try-using-incremental-gc-garbage-collection)
+    - [Using LOD technical](#using-lod-technical)
+    - [Bake Mesh](#bake-mesh)
+    - [Fake Shadow](#fake-shadow)
+    - [Pack texture](#pack-texture)
+    - [Enable GPU Instancing](#enable-gpu-instancing)
+    - [Disable Vsync](#disable-vsync)
+    - [Choose Suitable Graphics API](#choose-suitable-graphics-api)
+
+- [Others](#others)
+- [Support](#support)
 
 ---
-# Scripting
-## Clean Code
-- Your game may have many code redundancy, so clean code could increase the performance for your game.
-- Here I found a good [clean code topic](https://github.com/thangchung/clean-code-dotnet).
 
-## Avoid Allocating Memory
-Every time an object is created, memory is allocated. Very often in code, you are creating objects without even knowing it. 
+# Reduce Build Size
 
-### Situation 1: In Unity, the term "string" refers to a data type, not a variable name.
-- You want to debug log a content like this:
-```diff
-- Debug.Log("hello" + " " + "world");
-```
-- This code above will create 3 difference string and located in the heap memory. So this should be:
-```diff
-+ Debug.Log("hello world");
-```
-
-### Situation 2: Use classes and struct wisely.
-- **Memory Allocation and Performance Comparison:**
-  - When you create a **struct**, its memory is allocated on the **stack**. This makes **structs** more efficient than **classes**, which are allocated on the **heap**. This means that structs are more suitable for functions that require high performance and low memory usage.
-  - Due to their memory allocation differences, **structs** are generally faster than **classes**. If you’re working with a large amount of data, structs can be more efficient because they don’t require the overhead of heap memory allocation.
-  - However, there are some cases where **classes** are faster than **structs**. For example, when copying large objects, classes can be more efficient because they only copy a reference to the object instead of the object itself.
-- **When to Use Structs:**
-  - **Structs** are best used when you need to represent simple data types, such as integers, strings, or other basic data types. They are also useful when you need to work with large datasets, such as arrays or lists, where performance is critical.
-  - You should also use a **struct** when you need to pass a small amount of data to a method, and you want to avoid the overhead of passing a reference to a class.
-- **When to Use Classes:**
-  - **Classes** are best suited for representing complex objects like cars or people and for creating hierarchies of objects with inheritance. They are ideal for handling large amounts of data, such as working with databases.
-  - **Classes** are useful when encapsulating functionality and data together, providing organized and maintainable code.
-  - Additionally, **classes** support the implementation of **interfaces**, enhancing flexibility and modularity in your code.
-
-### Situation 3: Use C# Events instead of UnityEvents.
-- **UnityEvent** creates less garbage than **C# events** if you add more than two listeners to it, but creates more garbage otherwise. It creates garbage when dispatched (Update: the first time) where C# events do not. And it’s at least twice as slow as C# events.
-
-## Use Algorithm
-- The algorithm will significantly improve the performance of the game, apply it whenever possible.
-
-## Technical
-### Object Pooling
-<div align="center">
-	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/691394db-f947-43d9-bd13-f65549495f8d">
-  <p><b>Example of Object Pooling</b></p>
-</div>
-
-- To prevent **Garbage Collector** issues (CPU Spikes) in games with many spawning and destroying objects, a method called **Object Pooling** can be used. **Object Pooling** refers to creating all necessary objects beforehand and disabling/enabling them when it necessary, instead of instantiating (Instantiate() function) and destroying (Destroy() function) objects during runtime.
-- These objects can also be spawned beforehand during a loading screen and kept hidden until needed. This way they won’t cause performance issues when spawned during gameplay.
-- You can also wrtie pooling script or use asset in store like [LeanPool](https://assetstore.unity.com/packages/tools/utilities/lean-pool-35666)
-
-### Recyclable Scroll
-
-<div align="center">
-	<img width="500" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/c925547e-8780-45a9-b427-aeaec7a78cba">
-	<img width="500" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/a7d31475-161b-4008-9713-baf97b10d567">
-  <p><b>Recyclable scrollview</b></p>
-</div>
-
-- By creating a **scrollview with 9999 items** it causes a significant performance degradation for the game. So **rycyclable scrollview** is used to significantly increase the game's performance. Instead of creating 9999 items in a scrollview, **recyclable scrollview** creates a certain number of items that need to be displayed on the screen and reuses them.
-- [Recyclable Scroll Rect - Optimized List/Grid View](https://assetstore.unity.com/packages/tools/gui/recyclable-scroll-rect-optimized-list-grid-view-178560) is my suggestion.
-
----
-# Assets Import
 ## Texture
 <div align="center">
 	<img width="400" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/80402648-6e7f-403a-8558-d6d3fb6a6534">
@@ -125,9 +85,9 @@ Every time an object is created, memory is allocated. Very often in code, you ar
   - Use **ADPCM** for short, frequently used sounds (e.g., footsteps, gunshots). This shrinks the files compared to uncompressed PCM, but is quick to decode during playback.
 - Sound effects on mobile devices should be **22,050 Hz** at most. Using lower settings usually has minimal impact on the final quality; use your own ears to judge.
 - The setting varies by clip size.
-  - **Small clips (< 200 kb)** should **Decompress on Load**. This incurs CPU cost and memory by decompressing a sound into raw 16-bit PCM audio data, so it’s only desirable for short sounds.
+  - **Small clips (< 200 kb)** should **Decompress on Load**.
   - **Medium clips (>= 200 kb)** should remain **Compressed in Memory**.
-  - **Large files (background music)** should be set to **Streaming**, or else the entire asset will be loaded into memory at once.
+  - **Large files (background music)** should be set to **Streaming**.
 
 ## Mesh
 <div align="center">
@@ -136,10 +96,10 @@ Every time an object is created, memory is allocated. Very often in code, you ar
 </div>
 
 - Much like textures, **meshes** can consume excess memory if not imported carefully. To minimize meshes’ memory consumption:
-  - **Compress the mesh**: Aggressive compression can reduce disk space (memory at runtime, however, is unaffected). Note that mesh quantization can result in inaccuracy, so experiment with compression levels to see what works for your models.
-  - **Disable Read/Write**: Enabling this option duplicates the mesh in memory, which keeps one copy of the mesh in system memory and another in GPU memory. In most cases, you should disable it (in Unity 2019.2 and earlier, this option is checked by default).
-  - **Disable rigs and BlendShapes**: If your mesh does not need skeletal or blendshape animation, disable these options wherever possible.
-  - **Disable normals and tangents**: If you are absolutely certain the mesh’s material will not need normals or tangents, uncheck these options for extra savings.
+  - **Compress the mesh**
+  - **Disable Read/Write**
+  - **Disable rigs and BlendShapes**
+  - **Disable normals and tangents**
 
 ## Animation
 <div align="center">
@@ -147,108 +107,107 @@ Every time an object is created, memory is allocated. Very often in code, you ar
   <p><b>Animation import settings in Inspector</b></p>
 </div>
 
-- By clicking on a model containing animation in the project, you can open the **animation import settings**.
-- You can change properties such as **rotation error, position error, and scale error** to reduce file size. However, keep in mind that these parameters introduce errors to the animation, so you should be cautious when adjusting them. You can refer to the [documentation](https://www.techarthub.com/animation-compression-unity/) for more details on compression and animation
+- You can change properties such as **rotation error, position error, and scale error** to reduce file size.
+- Be cautious because these parameters introduce animation errors.
+
+---
+
+# Optimize Performance
+
+# Scripting
+
+## Clean Code
+- Your game may have many code redundancy, so clean code could increase the performance for your game.
+- Here I found a good [clean code topic](https://github.com/thangchung/clean-code-dotnet).
+
+## Avoid Allocating Memory
+Every time an object is created, memory is allocated.
+
+### Situation 1: In Unity, the term "string" refers to a data type, not a variable name.
+- String concatenation creates garbage.
+
+```diff
+- Debug.Log("hello" + " " + "world");
+```
+- This code above will create 3 difference string and located in the heap memory. So this should be:
+
+```diff
++ Debug.Log("hello world");
+```
+
+### Situation 2: Use classes and struct wisely.
+- Structs = stack, Classes = heap  
+- Structs are faster for small data  
+- Classes are better for complex objects  
+
+### Situation 3: Use C# Events instead of UnityEvents.
+- UnityEvent is slower and generates garbage.
+
+## Use Algorithm
+- The algorithm will significantly improve the performance of the game, apply it whenever possible.
+
+---
+
+# Technical
+
+## Object Pooling
+<div align="center">
+	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/691394db-f947-43d9-bd13-f65549495f8d">
+  <p><b>Example of Object Pooling</b></p>
+</div>
+
+- Prevent GC spikes by pooling objects instead of instantiating/destroying.
+
+## Recyclable Scroll
+<div align="center">
+	<img width="500" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/c925547e-8780-45a9-b427-aeaec7a78cba">
+	<img width="500" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/a7d31475-161b-4008-9713-baf97b10d567">
+  <p><b>Recyclable scrollview</b></p>
+</div>
+
+- Avoid creating 9999 UI items, reuse them instead.
+
+---
 
 # Tips and Tricks
 
 ## Staying with Unity LTS
-- You should stay with **Unity LTS (Long-term support)** versions only. Versions that do not support LTS often have unexpected errors.
-- As you dive in, keep in mind that while each Tech Stream release is supported with weekly updates until the next version, there is no guarantee of long-term support for new features.
+- Avoid Tech Stream for stability.
+
 ## Use original uncompressed WAV files as your source assets when possible.
-- If you use any compressed format (such as **MP3** or **Vorbis**), Unity will decompress it, then recompress it during build time. This results in two lossy passes, degrading the final quality.
+- Avoid double compression quality loss.
+
 ## Use the minimum Audio Source you can in your game.
-- Each **active audio source** requires CPU resources for playback, which can strain the device's processing capabilities. Active audio sources consume memory, and mobile devices typically have limited RAM.
+- Every active Audio Source consumes CPU/RAM.
+
 ## Customize Linear vs Gamma color space.
-<div align="center">
-	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/2b7ae850-39e2-41b0-b4dc-2ef3b40f8940">
-  <p><b>Linear vs Gamma color space</b></p>
-</div>
+- Gamma = **10–30% faster**.
 
-- **Gamma** has better performance **(~10-30%)** than **Linear**. However, the display is a bit worse. 
-- You can find this option in **Player Setting -> Other Settings**.
 ## Try using incremental GC (Garbage collection)
-<div align="center">
-	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/fa54bd08-fb26-4890-addd-07e382f7cb9a">
-  <p><b>Use incremental GC settings</b></p>
-</div>
-
-- Sometimes enable **use incremental GC** option can improve game's performance and sometimes it's not, you should see profiler for the impact. You can find it in **Player Setting**.
+- Smoother GC in some cases.
 
 ## Using LOD technical
-
-<div align="center">
-	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/1c980b4f-8977-4c80-b3f4-d8256680c45e">
-  <p><b>Level of details example</b></p>
-</div>
-
-- **Level of detail (LOD)** is a technique that reduces the number of GPU operations that Unity requires to render distant meshes.
-- When a **GameObject** in the Scene is far away from the Camera, you see less detail compared to when the GameObject is close to the **Camera**. However, by default, Unity uses the same number of triangles to render it at both distances. This can result in wasted GPU operations, which can impact performance in your Scene.
+- Reduce triangles for distant meshes.
 
 ## Bake Mesh
+- Reduce draw calls by combining meshes.
 
-<div align="center">
-  <video src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/74429c89-0723-4994-a9eb-1c64a83aeaf5" width="400" />
-</div>
-
-<div align="center">
-	<p><b>Youtube short for example of baking mesh</b></p>
-</div>
-
-- **Bake mesh** is the process of combining meshes to reduce draw calls, which also means increasing game performance. Unity does not provide mesh baking, however there are quite a few assets on the store that provide mesh baking, such as **Mesh Baker** or **ProBuilder**.
-- Here are some assets you can choose: [Bake Mesh](https://assetstore.unity.com/packages/tools/modeling/mesh-baker-5017), [Simplest Mesh Baker](https://assetstore.unity.com/packages/tools/utilities/simplest-mesh-baker-118123)
 ## Fake Shadow
-<div align="center">
-	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/bbc9702d-6bef-49d2-b0a2-bb9ccb3cf1bf">
-  <p><b>Lighting properties in Mesh Renderer</b></p>
-</div>
-
-- The computation of shadows in Unity incurs a significant performance cost, especially on mobile devices. It is advisable to **disable shadow** casting and receiving if not absolutely necessary, substituting them with **fake shadows** as an alternative to improve performance.
-- You can also create **fake shadows** using a **blurred texture** applied to a simple mesh or quad underneath your characters. Otherwise, you can create blob shadows with **custom shaders**.
+- Disable real shadows → huge performance gain.
 
 ## Pack texture
-
-<div align="center">
-	<img width="500" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/b3490819-9e4e-4948-884a-36b0d75cf23e">
-	<img width="500" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/b4ca9a34-3a52-4ae6-9948-3b13f48a94e8">
-  <p><b>Create and settings a sprite atlas</b></p>
-</div>
-
-- Combine textures into a **sprite atlas** within the same popup or scene in Unity to enable **batching draw call**. This will help improve performance, although it may slightly increase the game's file size.
-- Attach asset objects to pack and note that you should **disable tight packing** if you don't want to wrong display.
+- Use Sprite Atlas for batching.
 
 ## Enable GPU Instancing
-
-<div align="center">
-	<img width="500" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/af04b99c-f6fb-40ee-966b-20c621fe6f1b">
-  <p><b>Create and settings a sprite atlas</b></p>
-</div>
-
-
-- **GPU instancing** is a draw call optimization method that renders multiple copies of a mesh with the same material in a single draw call. Each copy of the mesh is called an instance. This is useful for drawing things that appear multiple times in a **scene**, for example, trees or bushes.
-- **GPU instancing** renders identical meshes in the same draw call. To add variation and reduce the appearance of repetition, each instance can have different properties, such as Color or Scale. Draw calls that render multiple instances appear in the **Frame Debugger** as Render Mesh (instanced).
+- Reduce draw calls for repeated meshes.
 
 ## Disable Vsync
-
-<div align="center">
-	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/87111f15-8f13-4509-9957-3b736c755745">
-  <p><b>Linear vs Gamma color space</b></p>
-</div>
-
-- **Enable Vsync** in mobile game might cause **lag**,  **faster battery drain** and also **limit the frame rate** to the monitor's refresh rate.
+- Avoid FPS lock + battery drain.
 
 ## Choose Suitable Graphics API
-<div align="center">
-	<img width="600" src="https://github.com/GuardianOfGods/unity-mobile-optimization/assets/52252046/9f16dd3b-3924-4f7e-b4c3-a1560529be76">
-  <p><b>Graphics API</b></p>
-</div>
+- Use **GLES2 + GLES3** for compatibility.
 
-- In **Player Setting**. You can check the list of graphics APIs supported by the current version of Unity by unchecking **Auto Graphics API** and clicking on the plus sign to view all API.
-- For **Android**, there are 3 API graphics: **GLES2, GLES3 and Vulkan** base on Unity version.
-  - **GLES3** is the best choise for popular mobile devices that you shouldn't remove.
-  - If you want to target on old devices, you should have **GLES2**. 
-  - **Vulkan** is good option for modern devices but sometime it's causing crash and lag for lower devices.
-- My recommend is using **GLES2, GLES3** for optimizing.
+---
 
 # Others
 - Topics:
@@ -257,9 +216,12 @@ Every time an object is created, memory is allocated. Very often in code, you ar
 - Also, I have created a simple game system for mobile platform:
   - [Unity Mobile Gamebase](https://github.com/Laputa-Unity/unity-mobile-gamebase)
 
+---
+
 # Support
 - If you like this topic, you can give this repository a star ⭐
 - I would greatly appreciate it if you could support me with a cup of coffee
+
 <a href="https://www.buymeacoffee.com/HoangVanThu">
   <img src="https://www.the3rdsequence.com/texturedb/images/donate/buymeacoffee.svg" width="200" height="47"/>
 </a>
