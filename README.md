@@ -169,13 +169,27 @@ Every time an object is created, memory is allocated.
 - Avoid creating 9999 UI items, reuse them instead.
 
 ## Physics Optimization
+### Physic update
+
+<div align="center">
+	<img width="955" height="697" alt="image" src="https://github.com/user-attachments/assets/c009e418-033a-4e27-8baf-5f142ca3c322" />
+  <p><b>Fixed time step</b></p>
+</div>
+
 - Mobile games typically **target 60 FPS (frames per second)** — this is the most comfortable and responsive framerate for players. Unity’s Physics system uses **Fixed Timestep**, which by default updates every 0.02 seconds, equivalent to 1 second / 60 frames.
 
-- However, when launching your game in many different markets, you will encounter a wide range of **low-end devices**. To optimize performance for these weaker devices, you can safely set Fixed Timestep = 0.033s, which corresponds to **30 FPS**. You can also retrieve the device’s hardware specifications and dynamically adjust the FPS in your code accordingly. Adjust this setting in:
+- However, when launching your game in many different markets, you will encounter a wide range of **low-end devices**. To optimize performance for these weaker devices, you can safely set Fixed Timestep = 0.033s, which corresponds to **30 FPS**. You can also retrieve the device’s hardware specifications and dynamically adjust the FPS in your code accordingly.
 
-```
-Edit → Project Settings → Time → Fixed Timestep
-```
+### Layer and Collider
+
+<div align="center">
+	<img width="666" height="571" alt="image" src="https://github.com/user-attachments/assets/45408d89-3f46-49c9-ac4f-d0ec1f4d4b76" />
+  <p><b>Layer matrix</b></p>
+</div>
+
+- In Unity, all physical interactions are processed through object **layers** and **colliders**. Having too many colliders interacting unnecessarily will degrade your game’s performance. Therefore, you should optimize by organizing your layers and colliders properly.
+
+- If two layers do not need to interact, disable their interaction immediately in the Layer Collision Matrix so the Physics system doesn’t waste time checking them. Additionally, in newer versions of Unity, each collider can individually **exclude specific layers** that it should not interact with.
 
 ---
 
