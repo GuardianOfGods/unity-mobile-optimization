@@ -23,6 +23,7 @@ The article has been synthesized from various sources on the internet. If you fi
   - [Technical](#technical)
     - [Object Pooling](#object-pooling)
     - [Recyclable Scroll](#recyclable-scroll)
+	- [Physics Optimization](#physics-optimization)
   - [Tips and Tricks](#tips-and-tricks)
     - [Staying with Unity LTS](#staying-with-unity-lts)
     - [Use original uncompressed WAV files](#use-original-uncompressed-wav-files-as-your-source-assets-when-possible)
@@ -166,6 +167,15 @@ Every time an object is created, memory is allocated.
 </div>
 
 - Avoid creating 9999 UI items, reuse them instead.
+
+## Physics Optimization
+- Mobile games typically **target 60 FPS (frames per second)** — this is the most comfortable and responsive framerate for players. Unity’s Physics system uses **Fixed Timestep**, which by default updates every 0.02 seconds, equivalent to 1 second / 60 frames.
+
+- However, when launching your game in many different markets, you will encounter a wide range of **low-end devices**. To optimize performance for these weaker devices, you can safely set Fixed Timestep = 0.033s, which corresponds to **30 FPS**. You can also retrieve the device’s hardware specifications and dynamically adjust the FPS in your code accordingly. Adjust this setting in:
+
+```
+Edit → Project Settings → Time → Fixed Timestep
+```
 
 ---
 
