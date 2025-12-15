@@ -157,7 +157,7 @@ Every time an object is created, memory is allocated.
   <p><b>Example of Object Pooling</b></p>
 </div>
 
-- Because ```Destroy(GameObject)``` is expensive and generates garbage memory, frequently creating and destroying objects can cause performance spikes and GC stuttering, especially on mobile devices. Object Pooling avoids this cost by reusing existing objects instead of destroying them, resulting in more stable performance, fewer GC allocations, and smoother gameplay.
+- Because ```Destroy(GameObject)``` is expensive and generates garbage memory, frequently creating and destroying objects can cause performance spikes and GC stuttering, especially on mobile devices. **Object Pooling** avoids this cost by reusing existing objects instead of destroying them, resulting in more stable performance, fewer GC allocations, and smoother gameplay.
 
 ## Recyclable Scroll
 <div align="center">
