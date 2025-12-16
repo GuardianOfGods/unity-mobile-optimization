@@ -20,6 +20,7 @@ The article has been synthesized from various sources on the internet. If you fi
     - [Clean Code](#clean-code)
     - [Avoid Allocating Memory](#avoid-allocating-memory)
     - [Use Algorithm](#use-algorithm)
+	- [Centralized Update](#centralized-update)
   - [Technical](#technical)
     - [Object Pooling](#object-pooling)
     - [Recyclable Scroll](#recyclable-scroll)
@@ -146,6 +147,15 @@ Every time an object is created, memory is allocated.
 
 ## Use Algorithm
 - The algorithm will significantly improve the performance of the game, apply it whenever possible.
+
+## Centralized Update
+<div align="center">
+	<img width="600" src="https://github.com/user-attachments/assets/419bf945-9f72-4b60-895e-18db391e6fee">
+  <p><b>Illustrative Image</b></p>
+</div>
+
+- Imagine 100 enemies moving in the same direction at the same speed. If each enemy has its own Update method, Unity must call the same logic 100 times every frame, creating unnecessary overhead. By using a **single centralized update** to move all enemies together, the engine work is reduced, performance improves, and the system scales better.
+- This approach is commonly known as a **Centralized Update (or Manager-based) pattern**, where multiple entities are updated through a single update loop instead of each entity having its own ```Update``` method.
 
 ---
 
